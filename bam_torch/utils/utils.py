@@ -107,6 +107,14 @@ def get_graphset(data, cutoff, uniq_element, enr_avg_per_element,
     return graph_list
 
 
+def extract_species(data):
+    atoms = read(data, index=0)
+    atoms_numbers = atoms.get_atomic_numbers()
+    species = torch.unique(torch.tensor(atoms_numbers))
+
+    return species
+
+
 def get_graphset_with_pad(graphset, pad_nodes_to, pad_edges_to):
     graph_list = []
     for data in graphset:

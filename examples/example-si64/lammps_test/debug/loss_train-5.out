@@ -1,0 +1,91 @@
+                               | TRAIN_____________________________| VALID_____________________________| 
+MM/DD/YYYY HH/MM/SS    EPOCH   | LOSS       MSE_E      MSE_F       | LOSS       MSE_E      MSE_F       | LR   
+--------------------------------------------------------------------------------------------------------------
+04/30/2025 15:48:46    2       | 22.704     7.1988     0.15505     | 29.784     16.196     0.13588     | 0.001
+04/30/2025 15:50:13    4       | 15.237     3.8162     0.11421     | 19.572     8.8233     0.10749     | 0.001
+04/30/2025 15:51:40    6       | 13.061     3.1879     0.098734    | 15.147     5.6951     0.094518    | 0.001
+04/30/2025 15:53:08    8       | 11.17      2.0515     0.091187    | 13.614     4.7133     0.08901     | 0.001
+04/30/2025 15:54:35    10      | 10.634     1.8867     0.087478    | 13.369     4.7556     0.086135    | 0.001
+04/30/2025 15:56:03    12      | 9.9753     1.4866     0.084887    | 12.157     3.7758     0.083816    | 0.001
+--------------------------------------------------------------------------------------------------------------
+
+* NUMBER OF PARAMETERS: 
+ - MODEL(TOTAL)   440128
+ --- HIDDEN.      64x0e+64x1o+64x2e
+ --- RADI. BASIS. 8
+
+* SEED NUMBER:
+ - DATA_SEED      10
+ - INIT_SEED      11
+
+* DATA INFO:
+ - N(TRAIN)       693
+ - N(VALID)       100
+ - BATCH          16
+ - CUTOFF         4.5
+ - AVG. NEIGH.    60
+
+* ELAPSED TIME:
+ - 0 DAYS, 0 HOURS, 9 MINUTES, and 26 SECONDS
+ -- DAYS          0.00655092593  
+ -- HOURS         0.157222222    
+ -- MINUTES       9.43333333     
+ -- SECONDS       566            
+
+--------------------------------------------------------------------------------------------------------------
+ 
+{'NN': {'cosine_sim': False,
+        'data_seed': 10,
+        'energy_grad_loss': True,
+        'energy_grad_mult': 10,
+        'enr_lambda': 1,
+        'fname_pkl': 'model.pkl',
+        'frc_lambda': 100,
+        'init_seed': 11,
+        'l2_lambda': 0.0,
+        'learning_rate': 0.001,
+        'loss_config': {'energy_loss': 'mse', 'force_loss': 'mse'},
+        'nepoch': 30000,
+        'nsave': 5,
+        'restart': False,
+        'weight_decay': 0.001},
+ 'active_fn': 'swish',
+ 'avg_num_neighbors': 60,
+ 'cueq_config': False,
+ 'cutoff': 4.5,
+ 'device': 'gpu',
+ 'element': 'auto',
+ 'features_dim': 64,
+ 'fname_traj': 'train.traj',
+ 'gpu-parallel': False,
+ 'hidden_channels': '64x0e+64x1o+64x2e',
+ 'log_config': {'lr': ['lr'],
+                'step': ['date', 'epoch'],
+                'train': ['loss', 'loss_e', 'loss_f'],
+                'valid': ['loss', 'loss_e', 'loss_f']},
+ 'log_interval': 2,
+ 'log_length': 'simple',
+ 'max_ell': 2,
+ 'model': 'race',
+ 'nbatch': 16,
+ 'nlayers': 3,
+ 'ntest': 'valid.traj',
+ 'ntrain': 'train.traj',
+ 'num_radial_basis': 8,
+ 'num_species': 1,
+ 'output_channels': '1x0e',
+ 'pbc': True,
+ 'predict': {'fname_plog': 'predict.out',
+             'fname_traj': 'si64_test_xyz',
+             'model': 'model.pkl',
+             'ndata': 1,
+             'valid_tag': True},
+ 'regress_forces': True,
+ 'scheduler': {'lr_gamma': 0.1,
+               'lr_init': 0.001,
+               'max_steps': 30,
+               'scheduler': 'ReduceLROnPlateau',
+               'warmup_factor': 0.2,
+               'warmup_steps': 10},
+ 'train': {'fname_log': 'loss_train-5.out'},
+ 'trainer': 'base'}

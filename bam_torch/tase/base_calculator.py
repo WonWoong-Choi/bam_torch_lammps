@@ -47,7 +47,7 @@ class BaseCalculator(Calculator, BaseTrainer):
         node_enr_avg = np.array([self.enr_avg_per_element[int(iz)] \
                         for iz in species]).sum()
         energy = preds["energy"] + node_enr_avg
-
+        print(" preds['energy']", preds["energy"])
         self.results['energy'] = float(energy)
         self.results['forces'] = np.array(preds['forces'].detach().cpu())
 

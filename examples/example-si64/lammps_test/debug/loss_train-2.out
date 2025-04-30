@@ -1,0 +1,86 @@
+                               | TRAIN_____________________________| VALID_____________________________| 
+MM/DD/YYYY HH/MM/SS    EPOCH   | LOSS       MSE_E      MSE_F       | LOSS       MSE_E      MSE_F       | LR   
+--------------------------------------------------------------------------------------------------------------
+04/30/2025 14:51:46    2       | 22.704     7.1988     0.15505     | 29.784     16.196     0.13588     | 0.001
+--------------------------------------------------------------------------------------------------------------
+
+* NUMBER OF PARAMETERS: 
+ - MODEL(TOTAL)   440128
+ --- HIDDEN.      64x0e+64x1o+64x2e
+ --- RADI. BASIS. 8
+
+* SEED NUMBER:
+ - DATA_SEED      10
+ - INIT_SEED      11
+
+* DATA INFO:
+ - N(TRAIN)       693
+ - N(VALID)       100
+ - BATCH          16
+ - CUTOFF         4.5
+ - AVG. NEIGH.    60
+
+* ELAPSED TIME:
+ - 0 DAYS, 0 HOURS, 1 MINUTES, and 37 SECONDS
+ -- DAYS          0.00112268519  
+ -- HOURS         0.0269444444   
+ -- MINUTES       1.61666667     
+ -- SECONDS       97             
+
+--------------------------------------------------------------------------------------------------------------
+ 
+{'NN': {'cosine_sim': False,
+        'data_seed': 10,
+        'energy_grad_loss': True,
+        'energy_grad_mult': 10,
+        'enr_lambda': 1,
+        'fname_pkl': 'model.pkl',
+        'frc_lambda': 100,
+        'init_seed': 11,
+        'l2_lambda': 0.0,
+        'learning_rate': 0.001,
+        'loss_config': {'energy_loss': 'mse', 'force_loss': 'mse'},
+        'nepoch': 30000,
+        'nsave': 5,
+        'restart': False,
+        'weight_decay': 0.001},
+ 'active_fn': 'swish',
+ 'avg_num_neighbors': 60,
+ 'cueq_config': False,
+ 'cutoff': 4.5,
+ 'device': 'gpu',
+ 'element': 'auto',
+ 'features_dim': 64,
+ 'fname_traj': 'train.traj',
+ 'gpu-parallel': False,
+ 'hidden_channels': '64x0e+64x1o+64x2e',
+ 'log_config': {'lr': ['lr'],
+                'step': ['date', 'epoch'],
+                'train': ['loss', 'loss_e', 'loss_f'],
+                'valid': ['loss', 'loss_e', 'loss_f']},
+ 'log_interval': 2,
+ 'log_length': 'simple',
+ 'max_ell': 2,
+ 'model': 'race',
+ 'nbatch': 16,
+ 'nlayers': 3,
+ 'ntest': 'valid.traj',
+ 'ntrain': 'train.traj',
+ 'num_radial_basis': 8,
+ 'num_species': 1,
+ 'output_channels': '1x0e',
+ 'pbc': True,
+ 'predict': {'fname_plog': 'predict.out',
+             'fname_traj': 'si64_test_xyz',
+             'model': 'model.pkl',
+             'ndata': 1,
+             'valid_tag': True},
+ 'regress_forces': True,
+ 'scheduler': {'lr_gamma': 0.1,
+               'lr_init': 0.001,
+               'max_steps': 30,
+               'scheduler': 'ReduceLROnPlateau',
+               'warmup_factor': 0.2,
+               'warmup_steps': 10},
+ 'train': {'fname_log': 'loss_train-2.out'},
+ 'trainer': 'base'}
