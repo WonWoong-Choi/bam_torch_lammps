@@ -23,7 +23,7 @@ def main():
     model = torch.load("model.pt", weights_only=False)
     model.eval()
     
-    species = extract_species("train_si.xyz")
+    species = extract_species("train.traj")
     model.atomic_numbers = species.clone().detach()
     model.num_interactions = torch.tensor(nlayers)
     model.r_max = torch.tensor(cutoff)
