@@ -25,7 +25,7 @@ for i, line in enumerate(log):
         continue
 
     if collecting:
-        enr = float(line.split()[2)])
+        enr = float(line.split()[2])
         energies.append(enr)
 
 traj = Trajectory('lammps_out.traj', 'w')
